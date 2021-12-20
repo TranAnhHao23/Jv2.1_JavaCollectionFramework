@@ -65,14 +65,18 @@ public class AnimalManager {
 
     public void addAnimal() {
         Animal animal = creatAnimal();
-        animalMap.put(animal.getName(), animal);
+        if (animalMap.containsKey(animal.getName())) {
+            System.out.println("Already exist on this list");
+        } else {
+            animalMap.put(animal.getName(), animal);
+        }
     }
 
     public void deleteAnimal(String name) {
         if (animalMap.containsKey(name)) {
             animalMap.remove(name);
         } else {
-            System.out.println(name + "doesn't exist on this list");
+            System.out.println(name + " doesn't exist on this list");
         }
     }
 
@@ -80,9 +84,9 @@ public class AnimalManager {
         if (animalMap.containsKey(name)) {
             Animal animal = creatAnimal();
             animalMap.remove(name);
-            animalMap.replace(name,animalMap.get(name),animalMap.put(animal.getName(),animal));
+            animalMap.replace(name, animalMap.get(name), animalMap.put(animal.getName(), animal));
         } else {
-            System.out.println(name + "doesn't exist on this list");
+            System.out.println(name + " doesn't exist on this list");
         }
     }
 
@@ -90,7 +94,7 @@ public class AnimalManager {
         if (animalMap.containsKey(name)) {
             System.out.println(animalMap.get(name));
         } else {
-            System.out.println(name + "doesn't exist on this list");
+            System.out.println(name + " doesn't exist on this list");
         }
     }
 
