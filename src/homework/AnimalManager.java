@@ -99,25 +99,25 @@ public class AnimalManager {
     }
 
     public void displayAnimalList() {
-        for (Map.Entry<String, Animal> entry : animalMap.entrySet()) {
-            String name = entry.getKey();
-            Animal animal = entry.getValue();
+        for (Map.Entry<String, Animal> animals : animalMap.entrySet()) {
+            String name = animals.getKey();
+            Animal animal = animals.getValue();
             System.out.println(name + " " + animal);
         }
     }
 
     public void displayAnimalDogClass() {
-        for (Map.Entry<String, Animal> entry : animalMap.entrySet()) {
-            if (entry.getValue() instanceof Dog) {
-                System.out.println(entry.getValue());
+        for (Map.Entry<String, Animal> animals : animalMap.entrySet()) {
+            if (animals.getValue() instanceof Dog) {
+                System.out.println(animals.getValue());
             }
         }
     }
 
     public void displayAnimalByWeight(double lowerWeight, double hihgerWeight) {
-        for (Map.Entry<String, Animal> entry : animalMap.entrySet()) {
-            if (entry.getValue().getWeight() > lowerWeight && entry.getValue().getWeight() < hihgerWeight) {
-                System.out.println(entry.getValue());
+        for (Map.Entry<String, Animal> animals : animalMap.entrySet()) {
+            if (animals.getValue().getWeight() > lowerWeight && animals.getValue().getWeight() < hihgerWeight) {
+                System.out.println(animals.getValue());
             }
         }
     }
